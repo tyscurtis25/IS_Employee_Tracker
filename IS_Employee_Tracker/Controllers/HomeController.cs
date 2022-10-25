@@ -11,11 +11,12 @@ namespace IS_Employee_Tracker.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private StudentDbContext _context { get; set; }
+        
+        //Constructor
+        public HomeController(StudentDbContext temp)
         {
-            _logger = logger;
+            _context = temp;
         }
 
         // This is our Dashboard page
@@ -30,10 +31,11 @@ namespace IS_Employee_Tracker.Controllers
             return View();
         }
 
-        // This displays a table that you can filter
+        // This displays a table that you can filter hypothetically
         public IActionResult Display()
         {
-            return View();
+            var table = _context.Student_Db.ToList();
+            return View(table);
         }
 
         public IActionResult Team()
