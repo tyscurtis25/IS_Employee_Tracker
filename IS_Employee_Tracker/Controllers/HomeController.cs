@@ -11,12 +11,10 @@ namespace IS_Employee_Tracker.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private EmployeeTrackerContext _empContext { get; set; }
 
-        public HomeController(ILogger<HomeController> logger, EmployeeTrackerContext context)
+        public HomeController(EmployeeTrackerContext context)
         {
-            _logger = logger;
             _empContext = context;
         }
 
@@ -35,7 +33,7 @@ namespace IS_Employee_Tracker.Controllers
         // This displays a table that you can filter hypothetically
         public IActionResult Display()
         {
-            var table = _context.Student_Db.ToList();
+            var table = _empContext.Information.ToList();
             return View(table);
         }
 
