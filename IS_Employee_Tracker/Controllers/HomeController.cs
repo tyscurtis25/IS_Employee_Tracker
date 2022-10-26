@@ -1,4 +1,4 @@
-﻿using IS_Employee_Tracker.Models;
+using IS_Employee_Tracker.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,12 +11,13 @@ namespace IS_Employee_Tracker.Controllers
 {
     public class HomeController : Controller
     {
-        private StudentDbContext _context { get; set; }
-        
-        //Constructor
-        public HomeController(StudentDbContext temp)
+        private readonly ILogger<HomeController> _logger;
+        private EmployeeTrackerContext _empContext { get; set; }
+
+        public HomeController(ILogger<HomeController> logger, EmployeeTrackerContext context)
         {
-            _context = temp;
+            _logger = logger;
+            _empContext = context;
         }
 
         // This is our Dashboard page
