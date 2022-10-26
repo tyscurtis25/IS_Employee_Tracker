@@ -12,10 +12,12 @@ namespace IS_Employee_Tracker.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private EmployeeTrackerContext _empContext { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, EmployeeTrackerContext context)
         {
             _logger = logger;
+            _empContext = context;
         }
 
         // This is our Dashboard page
