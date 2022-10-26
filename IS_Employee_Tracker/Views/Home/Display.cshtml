@@ -2,14 +2,14 @@
     ViewData["Title"] = "Display";
 }
 
-@model List<Student>
+@model List<EmployeeInfo>
 
 <div class="text-center">
     <h1 class="display-4">Student Employee Collection</h1>
     <h2>Information Systems Department at Brigham Young University</h2><br />
 </div>
 
-<div class="text-center">
+<div class="text-center" style="overflow:auto; width:1150px">
     <table class="table table-bordered table-striped">
 
         <thead class="font-weight-bold">
@@ -64,40 +64,42 @@
 
         @*Add rows to the table using a loop*@
         <tbody>
-            @foreach (Student s in Model)
+            @foreach (EmployeeInfo e in Model)
             {
             <tr>
-@*                <td><img src="@s.Image" width="140" /></td>
-*@              <td>@s.FirstName</td>
-                <td>@s.LastName</td>
-                <td>@s.International</td>
-                <td>@s.EmailAddress</td>
-                <td>@s.ExpectedHoursToWork</td>
-                <td>@s.Semester</td>
-                <td>@s.Year</td>
-                <td>@s.Phone</td>
-                <td>@s.BYUId</td>
-                <td>@s.PositionType</td>
-                <td>@s.ClassCode</td>
-                <td>@s.EmployeeRecord</td>
-                <td>@s.Suoervisor</td>
-                <td>@s.HireDate</td>
-                <td>@s.PayRate</td>
-                <td>@s.LastPayIncrease</td>
-                <td>@s.PayIncreaseAmount</td>
-                <td>@s.PayIncreaseDate</td>
-                <td>@s.YearInProgram</td>
-                <td>@s.PayGraduateTuition</td>
-                <td>@s.NameChangeCompleted</td>
-                <td>@s.Notes</td>
-                <td>@s.Terminated</td>
-                <td>@s.TerminationDate</td>
-                <td>@s.QualtricsSurveySent</td>
-                <td>@s.Submitted</td>
-                <td>@s.FormSubmissionDate</td>
-                <td>@s.AuthorizationToWorkReceived</td>
-                <td>@s.AuthorizationToWorkEmailSentDate</td>
-                <td>@s.BYUName</td>
+                @*<td><img src="@e.Image" width="140" /></td>
+                *@
+                <td>@e.FirstName</td>
+                <td>@e.LastName</td>
+                <td>@e.Gender</td>
+                <td>@e.International</td>
+                <td>@e.EmailAddress</td>
+                <td>@e.ExpectedWorkHours</td>
+                <td>@e.Semester</td>
+                <td>@e.Year</td>
+                <td>@e.Phone</td>
+                <td>@e.BYUID</td>
+                <td>@e.PositionType</td>
+                <td>@e.ClassCode</td>
+                <td>@e.EmpRecordNum</td>
+                <td>@e.SupervisorName</td>
+                <td>@e.HireDate</td>
+                <td>@e.PayRate</td>
+                <td>@e.LastPayIncrease</td>
+                <td>@e.PayIncreaseAmount</td>
+                <td>@e.IncreaseInputDate</td>
+                <td>@e.YearInProgram</td>
+                <td>@e.GradTuition</td>
+                <td>@e.NameChangeComplete</td>
+                <td>@e.Notes</td>
+                <td>@e.Terminated</td>
+                <td>@e.TerminationDate</td>
+                <td>@e.SurveySent</td>
+                <td>@e.FormSubmitted</td>
+                <td>@e.SubmissionDate</td>
+                <td>@e.WorkAuthorization</td>
+                <td>@e.WorkAuthorizationEmailSent</td>
+                <td>@e.BYUName</td>
             </tr>
             }
         </tbody>
