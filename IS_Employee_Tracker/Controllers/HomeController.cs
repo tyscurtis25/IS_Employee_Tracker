@@ -1,4 +1,4 @@
-﻿using IS_Employee_Tracker.Models;
+using IS_Employee_Tracker.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -32,10 +32,11 @@ namespace IS_Employee_Tracker.Controllers
             return View();
         }
 
-        // This displays a table that you can filter
+        // This displays a table that you can filter hypothetically
         public IActionResult Display()
         {
-            return View();
+            var table = _context.Student_Db.ToList();
+            return View(table);
         }
 
         public IActionResult Team()

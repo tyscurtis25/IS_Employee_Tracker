@@ -2,7 +2,105 @@
     ViewData["Title"] = "Display";
 }
 
+@model List<Student>
+
 <div class="text-center">
-    <h1 class="display-4">Display</h1>
-    <p>This is where we will put the table and build filtering functionality.</p>
+    <h1 class="display-4">Student Employee Collection</h1>
+    <h2>Information Systems Department at Brigham Young University</h2><br />
 </div>
+
+<div class="text-center">
+    <table class="table table-bordered table-striped">
+
+        <thead class="font-weight-bold">
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>International</td>
+                @*^^ yes/no*@
+                <td>Gender</td>
+                @*^^ drop down*@
+                <td>Email Address</td>
+                <td>Expected Hours to Work</td>
+                <td>Semester</td>
+                <td>Year</td>
+                @*^^ drop down*@
+                <td>Phone</td>
+                <td>BYU ID</td>
+                <td>Position Type</td>
+                @*^^ drop down*@
+                <td>Class Code</td>
+                <td>Employee Record</td>
+                @*^^ drop down (0-3)*@
+                <td>Supervisor</td>
+                @*^^ drop down*@
+                <td>Hire Date</td>
+                <td>Pay Rate ($)</td>
+                <td>Last Pay Increase</td>
+                <td>Pay Increase Amount</td>
+                <td>Pay Increase Input Date</td>
+                <td>Year in Program</td>
+                @*^^ drop down*@
+                <td>Pay Graduate Tuition</td>
+                @*^^ yes/no*@
+                <td>Name Change Completed</td>
+                @*^^ yes/no*@
+                <td>Notes</td>
+                <td>Terminated</td>
+                @*^^ yes/no*@
+                <td>Termination Date</td>
+                <td>Qualtrics Survey Sent</td>
+                @*^^ drop down*@
+                <td>Submitted</td>
+                @*^^ yes/no*@
+                <td>Form Submission Date</td>
+                <td>Authorization to Work Received</td>
+                @*^^ yes/no*@
+                <td>Authorization to Work Email Sent Date</td>
+                <td>BYU Name</td>
+
+            </tr>
+        </thead>
+
+        @*Add rows to the table using a loop*@
+        <tbody>
+            @foreach (Student s in Model)
+            {
+            <tr>
+@*                <td><img src="@s.Image" width="140" /></td>
+*@              <td>@s.FirstName</td>
+                <td>@s.LastName</td>
+                <td>@s.International</td>
+                <td>@s.EmailAddress</td>
+                <td>@s.ExpectedHoursToWork</td>
+                <td>@s.Semester</td>
+                <td>@s.Year</td>
+                <td>@s.Phone</td>
+                <td>@s.BYUId</td>
+                <td>@s.PositionType</td>
+                <td>@s.ClassCode</td>
+                <td>@s.EmployeeRecord</td>
+                <td>@s.Suoervisor</td>
+                <td>@s.HireDate</td>
+                <td>@s.PayRate</td>
+                <td>@s.LastPayIncrease</td>
+                <td>@s.PayIncreaseAmount</td>
+                <td>@s.PayIncreaseDate</td>
+                <td>@s.YearInProgram</td>
+                <td>@s.PayGraduateTuition</td>
+                <td>@s.NameChangeCompleted</td>
+                <td>@s.Notes</td>
+                <td>@s.Terminated</td>
+                <td>@s.TerminationDate</td>
+                <td>@s.QualtricsSurveySent</td>
+                <td>@s.Submitted</td>
+                <td>@s.FormSubmissionDate</td>
+                <td>@s.AuthorizationToWorkReceived</td>
+                <td>@s.AuthorizationToWorkEmailSentDate</td>
+                <td>@s.BYUName</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
