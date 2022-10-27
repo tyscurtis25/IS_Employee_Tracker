@@ -25,9 +25,38 @@ namespace IS_Employee_Tracker.Controllers
         }
 
         // This is where you input new records
+
+        [HttpGet]
         public IActionResult Form()
         {
+            ViewBag.form = "add";
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Form(EmployeeInfo e)
+        {
+            if (ModelState.IsValid)
+            {
+                //primary key for adding vs editing
+                //if (e.BYUID == 0)
+                //{
+                //    _empContext.Information.Add(e);
+                //}
+                //else
+                //{
+                //    _empContext.Update(e);
+                //}
+                _empContext.Update(e);
+                _empContext.SaveChanges();
+                return RedirectToAction("Display");
+            }
+
+            else
+            {
+                return View(e);
+            }
+
         }
 
         // This displays a table that you can filter hypothetically
