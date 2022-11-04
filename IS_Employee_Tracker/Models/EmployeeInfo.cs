@@ -44,6 +44,14 @@ namespace IS_Employee_Tracker.Models
         public string WorkAuthorizationEmailSent { get; set; }
         public string BYUName { get; set; }
 
-
+        public static List<EmployeeInfo> DummyData()
+        {
+            List<EmployeeInfo> employees = new List<EmployeeInfo>
+            {
+                new EmployeeInfo{FirstName="Joe", LastName="Free"},
+                new EmployeeInfo{FirstName="Fred", LastName="Green"}
+            };
+            return employees;
+        }
     }
 }

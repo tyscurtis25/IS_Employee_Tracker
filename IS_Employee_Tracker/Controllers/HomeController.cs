@@ -2,10 +2,14 @@ using IS_Employee_Tracker.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Web;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Net.Http.Headers;
 
 namespace IS_Employee_Tracker.Controllers
 {
@@ -24,6 +28,32 @@ namespace IS_Employee_Tracker.Controllers
             return View();
         }
 
+        public void ExportToCSV()
+        {
+            StringWriter sw = new StringWriter();
+            sw.WriteLine("\"FirstName\", \"LastName\"");
+
+            Response.Clear();
+            Response.Headers[HeaderNames.ContentDisposition] = "attachment; filename=DemoExcel.csv";
+            Response.ContentType = "text/csv";
+
+            var employees = EmployeeInfo.DummyData();
+
+            foreach (var employee in employees)
+            {
+                sw.WriteLine(string.Format("\"{0}\", \"{1}\"",
+                    employee.FirstName,
+                    employee.LastName));
+            }
+            Response.WriteAsync(sw.ToString());
+            Response.Clear();
+        }
+
+
+        public void ExportToExcel()
+        {
+
+        }
         // This is where you input new records
 
         [HttpGet]
