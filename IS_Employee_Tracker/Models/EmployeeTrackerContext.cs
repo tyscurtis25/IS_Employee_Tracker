@@ -23,37 +23,67 @@ namespace IS_Employee_Tracker.Models
                 new EmployeeInfo
                 {
                     FirstName = "Michael"
-                    , LastName = "Scott"
-                    , International = false
-                    , Gender = "Male"
-                    , EmailAddress = "Michael.Scott@dundermifflin.fake"
-                    , ExpectedWorkHours = 20
-                    , Semester = "Fall"
-                    , Year = 2020
-                    , Phone = "(888)867-5309"
-                    , BYUID = "665614397"
-                    , PositionType = "TA IS 201"
-                    , ClassCode = "26077"
-                    , EmpRecordNum = 0
-                    , SupervisorName = "David Wallace"
-                    , HireDate = "1/3/2020"
-                    , PayRate = 15.50
-                    , LastPayIncrease = "2/27/2021"
-                    , PayIncreaseAmount = 0.25
-                    , IncreaseInputDate = "6/27/2021"
-                    , YearInProgram = "MSB Core (IS or other)"
-                    , GradTuition = true
-                    , NameChangeComplete = true
-                    , Notes = ""
-                    , Terminated = false
-                    , TerminationDate = ""
-                    , SurveySent = "Sent"
-                    , FormSubmitted = true
-                    , SubmissionDate = "1/3/2020"
-                    , WorkAuthorization = true
-                    , WorkAuthorizationEmailSent = "1/4/2020"
-                    , BYUName = "Scott, Michael"
-                }, 
+                    ,
+                    LastName = "Scott"
+                    ,
+                    International = false
+                    ,
+                    Gender = "Male"
+                    ,
+                    EmailAddress = "Michael.Scott@dundermifflin.fake"
+                    ,
+                    ExpectedWorkHours = 20
+                    ,
+                    Semester = "Fall"
+                    ,
+                    Year = 2020
+                    ,
+                    Phone = "(888)867-5309"
+                    ,
+                    BYUID = "665614397"
+                    ,
+                    PositionType = "TA IS 201"
+                    ,
+                    ClassCode = "26077"
+                    ,
+                    EmpRecordNum = 0
+                    ,
+                    SupervisorName = "David Wallace"
+                    ,
+                    HireDate = "1/3/2020"
+                    ,
+                    PayRate = 15.50
+                    ,
+                    LastPayIncrease = "2/27/2021"
+                    ,
+                    PayIncreaseAmount = 0.25
+                    ,
+                    IncreaseInputDate = "6/27/2021"
+                    ,
+                    YearInProgram = "MSB Core (IS or other)"
+                    ,
+                    GradTuition = true
+                    ,
+                    NameChangeComplete = true
+                    ,
+                    Notes = ""
+                    ,
+                    Terminated = false
+                    ,
+                    TerminationDate = ""
+                    ,
+                    SurveySent = "Sent"
+                    ,
+                    FormSubmitted = true
+                    ,
+                    SubmissionDate = "1/3/2020"
+                    ,
+                    WorkAuthorization = true
+                    ,
+                    WorkAuthorizationEmailSent = "1/4/2020"
+                    ,
+                    BYUName = "Scott, Michael"
+                },
                 new EmployeeInfo
                 {
                     FirstName = "Dwight"

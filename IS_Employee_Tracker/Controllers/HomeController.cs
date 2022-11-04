@@ -11,9 +11,9 @@ namespace IS_Employee_Tracker.Controllers
 {
     public class HomeController : Controller
     {
-        private EmployeeTrackerContext _empContext { get; set; }
+        private IEmpTrackerRepository _empContext { get; set; }
 
-        public HomeController(EmployeeTrackerContext context)
+        public HomeController(IEmpTrackerRepository context)
         {
             _empContext = context;
         }
@@ -29,7 +29,7 @@ namespace IS_Employee_Tracker.Controllers
         [HttpGet]
         public IActionResult Form()
         {
-            ViewBag.form = "add";
+            //ViewBag.form = "add";
             return View();
         }
 
@@ -38,18 +38,10 @@ namespace IS_Employee_Tracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                //primary key for adding vs editing
-                //if (e.BYUID == 0)
-                //{
-                //    _empContext.Information.Add(e);
-                //}
-                //else
-                //{
-                //    _empContext.Update(e);
-                //}
-                _empContext.Update(e);
-                _empContext.SaveChanges();
-                return RedirectToAction("Display");
+                _empContext.Add(e);
+                _empContext.SaveChanges(e);
+
+                return View("Display", e);
             }
 
             else
