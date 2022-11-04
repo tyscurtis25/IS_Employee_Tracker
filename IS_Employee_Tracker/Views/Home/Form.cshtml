@@ -10,7 +10,7 @@
     <p>This is the form page to add a student employee</p>
 
 </div>
-<form method="post" asp-controller="Home" asp-action="add">
+<form method="post" asp-controller="Home" asp-action="Form">
 
     <div asp-validation-summary="All"></div>
     <h1>Please Fill Out All of the Student Employee Info:</h1>
@@ -22,8 +22,8 @@
     <input asp-for=@Model.LastName /><br />
 
     <label asp-for=@Model.International>International?:</label><br />
-    <input checked="checked" type="radio" name="international" value="No" asp-for=@Model.International />No<br />
-    <input type="radio" name="international" value="Yes" asp-for=@Model.International />Yes<br />
+    <input checked="checked" type="radio" name="international" value="False" asp-for=@Model.International />No<br />
+    <input type="radio" name="international" value="True" asp-for=@Model.International />Yes<br />
     <br />
 
     <label asp-for=@Model.Gender>Gender:</label>
@@ -54,7 +54,7 @@
     <input asp-for=@Model.Phone placeholder="8011231234" /><br />
 
     <label asp-for=@Model.BYUID>BYU ID:</label>
-    <input type="number" asp-for=@Model.BYUID placeholder="123456789" /><br />
+    <input type="string" asp-for=@Model.BYUID placeholder="123456789" /><br />
 
     <label asp-for=@Model.PositionType>Position Type:</label>
     <select asp-for="@Model.PositionType">
@@ -107,21 +107,21 @@
     </select><br />
 
     <label asp-for=@Model.GradTuition>Pays Graduate Tuition?:</label> <br />
-    <input type="radio" name="tuition" value="No" asp-for=@Model.GradTuition />No<br />
-    <input type="radio" name="tuition" value="Yes" asp-for=@Model.GradTuition />Yes<br />
+    <input type="radio" name="tuition" value="False" asp-for=@Model.GradTuition />No<br />
+    <input type="radio" name="tuition" value="True" asp-for=@Model.GradTuition />Yes<br />
     <br />
 
     <label asp-for=@Model.NameChangeComplete>Name Change Completed?:</label> <br />
-    <input type="radio" name="namechange" value="No" asp-for=@Model.NameChangeComplete />No<br />
-    <input type="radio" name="namechange" value="Yes" asp-for=@Model.NameChangeComplete />Yes<br />
+    <input type="radio" name="namechange" value="False" asp-for=@Model.NameChangeComplete />No<br />
+    <input type="radio" name="namechange" value="True" asp-for=@Model.NameChangeComplete />Yes<br />
     <br />
 
     <label asp-for=@Model.Notes>Notes:</label>
     <input asp-for=@Model.Notes /><br />
 
     <label asp-for=@Model.Terminated>Terminated?:</label><br />
-    <input type="radio" name="terminated" value="No" asp-for=@Model.Terminated />No<br />
-    <input type="radio" name="terminated" value="Yes" asp-for=@Model.Terminated />Yes<br />
+    <input type="radio" name="terminated" value="False" asp-for=@Model.Terminated />No<br />
+    <input type="radio" name="terminated" value="True" asp-for=@Model.Terminated />Yes<br />
     <br />
 
     <label asp-for=@Model.TerminationDate>Termination Date:</label>
@@ -131,16 +131,16 @@
     <input type="checkbox" asp-for=@Model.SurveySent /><br />
 
     <label asp-for=@Model.FormSubmitted>Form Submitted:</label><br />
-    <input type="radio" name="formsub" value="No" asp-for=@Model.FormSubmitted />No<br />
-    <input type="radio" name="formsub" value="Yes" asp-for=@Model.FormSubmitted />Yes<br />
+    <input type="radio" name="formsub" value="False" asp-for=@Model.FormSubmitted />No<br />
+    <input type="radio" name="formsub" value="True" asp-for=@Model.FormSubmitted />Yes<br />
     <br />
 
     <label asp-for=@Model.SubmissionDate>Form Submission Date:</label>
     <input type="date" asp-for=@Model.SubmissionDate /><br />
 
     <label asp-for=@Model.WorkAuthorization>Authorization to Work Received?:</label><br />
-    <input type="radio" name="authorization" value="No" asp-for=@Model.WorkAuthorization />No<br />
-    <input type="radio" name="authorization" value="Yes" asp-for=@Model.WorkAuthorization />Yes<br />
+    <input type="radio" name="authorization" value="False" asp-for=@Model.WorkAuthorization />No<br />
+    <input type="radio" name="authorization" value="True" asp-for=@Model.WorkAuthorization />Yes<br />
     <br />
 
     <label asp-for=@Model.WorkAuthorizationEmailSent>Authorization to Work Email Sent Date:</label>

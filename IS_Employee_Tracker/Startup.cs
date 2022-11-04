@@ -32,6 +32,8 @@ namespace IS_Employee_Tracker
             {
                 options.UseSqlite(Configuration["ConnectionStrings:EmpDbConnection"]);
             });
+
+            services.AddScoped<IEmpTrackerRepository, EFEmpTrackerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
