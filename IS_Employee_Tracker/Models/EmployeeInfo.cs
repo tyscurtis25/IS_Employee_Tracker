@@ -44,6 +44,6 @@ namespace IS_Employee_Tracker.Models
         public string? WorkAuthorizationEmailSent { get; set; }
         public string? BYUName { get; set; }
 
-
+        
     }
 }
