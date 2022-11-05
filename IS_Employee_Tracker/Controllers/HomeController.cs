@@ -31,9 +31,9 @@ namespace IS_Employee_Tracker.Controllers
         public void ExportToCSV()
         {
             StringWriter sw = new StringWriter();
-            sw.WriteLine("\"First Name\", \"Last Name\", \"International\", \"Gender\", \"Email Address\", \"Expected Work Hours\", \"Semester\", \"Year\", \"Phone\", \"BYUID\", \"Position Type\", \"Class Code\", \"EmpRecordNum\"," +
-                "\"Supervisor Name\", \"Hire Date\", \"PayRate\", \"Last Pay Increase\", \"Pay Increase Amount\", \"Increase Input Date\", \"Year In Program\", \"Grad Tuition\", \"Name Change Complete\", \"Notes\", \"Terminated\"," +
-                "\"Termination Date\", \"Survey Sent\", \"Form Submitted\", \"Submission Date\", \"Work Authorization\", \"Work Authorization Email Sent\", \"BYU Name\"");
+            sw.WriteLine("First Name, Last Name, International, Gender, Email Address, Expected Work Hours, Semester, Year, Phone, BYU ID, Position Type, Class Code, Emp Record Num," +
+                "Supervisor Name, Hire Date, Pay Rate, Last Pay Increase, Pay Increase Amount, Increase Input Date, Year In Program, Grad Tuition, Name Change Complete, Notes, Terminated," +
+                "Termination Date, Survey Sent, Form Submitted, Submission Date, Work Authorization, Work Authorization Email Sent, BYU Name");
     
 
             Response.Clear();
@@ -44,8 +44,8 @@ namespace IS_Employee_Tracker.Controllers
 
             foreach (var e in employees)
             {
-                sw.WriteLine(string.Format("\"{0}\", \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\", \"{6}\", \"{7}\", \"{8}\", \"{9}\", \"{10}\", \"{11}\", \"{12}\", \"{13}\", \"{14}\", \"{15}\", \"{16}\", " +
-                    "\"{17}\", \"{18}\", \"{19}\", \"{20}\", \"{21}\", \"{22}\", \"{23}\", \"{24}\", \"{25}\", \"{26}\", \"{27}\", \"{28}\", \"{29}\", \"{30}\",",
+                sw.WriteLine(string.Format("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, " +
+                    "{17}, {18}, {19}, {20}, {21}, {22}, {23}, {24}, {25}, {26}, {27}, {28}, {29}, {30},",
                     e.FirstName,
                     e.LastName,
                     e.International, 
