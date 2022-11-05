@@ -7,150 +7,151 @@
 
 <div class="text-center">
     <h1 class="display-4">Form</h1>
-    <p>This is the form page to add a student employee</p>
 
 </div>
-<form method="post" asp-controller="Home" asp-action="Form">
+<div class="container col-7">
+    <form class="form-group" method="post" asp-controller="Home" asp-action="Form">
 
-    <div asp-validation-summary="All"></div>
-    <h1>Please Fill Out All of the Student Employee Info:</h1>
+        <div asp-validation-summary="All"></div>
+        <h4>Please fill out all of the student employee info:</h4>
 
-    <label asp-for=@Model.FirstName>First Name:</label>
-    <input asp-for=@Model.FirstName /><br />
+        <label asp-for=@Model.FirstName>First Name:</label>
+        <input class="form-control" asp-for=@Model.FirstName /><br />
 
-    <label asp-for=@Model.LastName>Last Name:</label>
-    <input asp-for=@Model.LastName /><br />
+        <label asp-for=@Model.LastName>Last Name:</label>
+        <input class="form-control" asp-for=@Model.LastName /><br />
 
-    <label asp-for=@Model.International>International?:</label><br />
-    <input checked="checked" type="radio" name="international" value="False" asp-for=@Model.International />No<br />
-    <input type="radio" name="international" value="True" asp-for=@Model.International />Yes<br />
-    <br />
+        <label asp-for=@Model.EmailAddress>Email Address:</label>
+        <input class="form-control" type="email" asp-for=@Model.EmailAddress /><br />
 
-    <label asp-for=@Model.Gender>Gender:</label>
-    <select asp-for="@Model.Gender">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
-    </select><br />
+        <label asp-for=@Model.BYUID>BYU ID:</label>
+        <input class="form-control" asp-for=@Model.BYUID placeholder="cougs12" /><br />
 
-    <label asp-for=@Model.EmailAddress>Email Address:</label>
-    <input type="email" asp-for=@Model.EmailAddress /><br />
+        <label asp-for=@Model.International>International?:</label><br />
+        <input class="" checked="checked" type="radio" name="international" value="False" asp-for=@Model.International />No<br />
+        <input class="" type="radio" name="international" value="True" asp-for=@Model.International />Yes<br />
+        <br />
 
-    <label asp-for=@Model.ExpectedWorkHours>Expected Hours to Work:</label>
-    <input type="number" asp-for=@Model.ExpectedWorkHours /><br />
+        <label asp-for=@Model.Gender>Gender:</label>
+        <select class="form-control" asp-for="@Model.Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br />
 
-    <label asp-for=@Model.Semester>Semester:</label>
-    <select asp-for="@Model.Semester">
-        <option value="Fall">Fall</option>
-        <option value="Winter">Winter</option>
-        <option value="Spring">Spring</option>
-        <option value="Summer">Summer</option>
-    </select><br />
+        <label asp-for=@Model.ExpectedWorkHours>Expected Hours to Work:</label>
+        <input class="form-control" asp-for=@Model.ExpectedWorkHours /><br />
 
-    <label asp-for=@Model.Year>Year:</label>
-    <input asp-for=@Model.Year /><br />
+        <label asp-for=@Model.Semester>Semester:</label>
+        <select class="form-control" asp-for="@Model.Semester">
+            <option value="Fall">Fall</option>
+            <option value="Winter">Winter</option>
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+        </select><br />
 
-    <label asp-for=@Model.Phone>Phone:</label>
-    <input asp-for=@Model.Phone placeholder="8011231234" /><br />
+        <label asp-for=@Model.Year>Year:</label>
+        <input class="form-control" asp-for=@Model.Year /><br />
 
-    <label asp-for=@Model.BYUID>BYU ID:</label>
-    <input type="string" asp-for=@Model.BYUID placeholder="123456789" /><br />
+        <label asp-for=@Model.Phone>Phone:</label>
+        <input class="form-control" asp-for=@Model.Phone placeholder="8011231234" /><br />
 
-    <label asp-for=@Model.PositionType>Position Type:</label>
-    <select asp-for="@Model.PositionType">
-        <option value="TA">Teaching Assistant</option>
-        <option value="RA">Research Assistant</option>
-    </select><br />
+        <label asp-for=@Model.PositionType>Position Type:</label>
+        <select class="form-control" asp-for="@Model.PositionType">
+            <option value="TA">Teaching Assistant</option>
+            <option value="RA">Research Assistant</option>
+        </select><br />
 
-    <label asp-for=@Model.ClassCode>Class Code:</label>
-    <input asp-for=@Model.ClassCode /><br />
+        <label asp-for=@Model.ClassCode>Class Code:</label>
+        <input class="form-control" asp-for=@Model.ClassCode /><br />
 
-    <label asp-for=@Model.EmpRecordNum>Employee Record:</label>
-    <select asp-for="@Model.EmpRecordNum">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-    </select><br />
+        <label asp-for=@Model.EmpRecordNum>Employee Record:</label>
+        <select class="form-control" asp-for="@Model.EmpRecordNum">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select><br />
 
-    <label asp-for=@Model.SupervisorName>Supervisor Name:</label>
-    <select asp-for="@Model.SupervisorName">
-        <option value="DW">David Wallace</option>
-        <option value="MS">Michael Scott</option>
-        <option value="JB">Jo Bennett</option>
-        <option value="JL">Jan Levinson</option>
-        <option value="JD">John Doe</option>
-    </select><br />
+        <label asp-for=@Model.SupervisorName>Supervisor Name:</label>
+        <select class="form-control" asp-for="@Model.SupervisorName">
+            <option value="DW">David Wallace</option>
+            <option value="MS">Michael Scott</option>
+            <option value="JB">Jo Bennett</option>
+            <option value="JL">Jan Levinson</option>
+            <option value="JD">John Doe</option>
+        </select><br />
 
-    <label asp-for=@Model.HireDate>Hire Date:</label>
-    <input type="date" asp-for=@Model.HireDate /><br />
+        <label asp-for=@Model.HireDate>Hire Date:</label>
+        <input class="form-control" type="date" asp-for=@Model.HireDate /><br />
 
-    <label asp-for=@Model.PayRate>Pay Rate ($):</label>
-    <input type="number" asp-for=@Model.PayRate /><br />
+        <label asp-for=@Model.PayRate>Pay Rate ($):</label>
+        <input class="form-control" type="number" asp-for=@Model.PayRate /><br />
 
-    <label asp-for=@Model.LastPayIncrease>Last Pay Increase:</label>
-    <input type="date" asp-for=@Model.LastPayIncrease /><br />
+        <label asp-for=@Model.LastPayIncrease>Last Pay Increase:</label>
+        <input class="form-control" type="date" asp-for=@Model.LastPayIncrease /><br />
 
-    <label asp-for=@Model.PayIncreaseAmount>Pay Increase Amount:</label>
-    <input type="number" asp-for=@Model.PayIncreaseAmount /><br />
+        <label asp-for=@Model.PayIncreaseAmount>Pay Increase Amount:</label>
+        <input class="form-control" type="number" asp-for=@Model.PayIncreaseAmount /><br />
 
-    <label asp-for=@Model.IncreaseInputDate>Increase Input Date:</label>
-    <input type="date" asp-for=@Model.IncreaseInputDate /><br />
+        <label asp-for=@Model.IncreaseInputDate>Increase Input Date:</label>
+        <input class="form-control" type="date" asp-for=@Model.IncreaseInputDate /><br />
 
-    <label asp-for=@Model.YearInProgram>Year In Program:</label>
-    <select asp-for="@Model.YearInProgram\">
-        <option value="MSB">MSB Core</option>
-        <option value="MACC">MACC</option>
-        <option value="MISM">MISM</option>
-        <option value="MPA">MPA</option>
-        <option value="OTHER">Other</option>
-    </select><br />
+        <label asp-for=@Model.YearInProgram>Year In Program:</label>
+        <select class="form-control" asp-for="@Model.YearInProgram\">
+            <option value="MSB">MSB Core</option>
+            <option value="MACC">MACC</option>
+            <option value="MISM">MISM</option>
+            <option value="MPA">MPA</option>
+            <option value="OTHER">Other</option>
+        </select><br />
 
-    <label asp-for=@Model.GradTuition>Pays Graduate Tuition?:</label> <br />
-    <input type="radio" name="tuition" value="False" asp-for=@Model.GradTuition />No<br />
-    <input type="radio" name="tuition" value="True" asp-for=@Model.GradTuition />Yes<br />
-    <br />
+        <label asp-for=@Model.GradTuition>Pays Graduate Tuition?:</label> <br />
+        <input class="" type="radio" name="tuition" value="False" asp-for=@Model.GradTuition />No<br />
+        <input class="" type="radio" name="tuition" value="True" asp-for=@Model.GradTuition />Yes<br />
+        <br />
 
-    <label asp-for=@Model.NameChangeComplete>Name Change Completed?:</label> <br />
-    <input type="radio" name="namechange" value="False" asp-for=@Model.NameChangeComplete />No<br />
-    <input type="radio" name="namechange" value="True" asp-for=@Model.NameChangeComplete />Yes<br />
-    <br />
+        <label asp-for=@Model.NameChangeComplete>Name Change Completed?:</label> <br />
+        <input class="" type="radio" name="namechange" value="False" asp-for=@Model.NameChangeComplete />No<br />
+        <input class="" type="radio" name="namechange" value="True" asp-for=@Model.NameChangeComplete />Yes<br />
+        <br />
 
-    <label asp-for=@Model.Notes>Notes:</label>
-    <input asp-for=@Model.Notes /><br />
+        <label asp-for=@Model.Notes>Notes:</label>
+        <input class="form-control" asp-for=@Model.Notes /><br />
 
-    <label asp-for=@Model.Terminated>Terminated?:</label><br />
-    <input type="radio" name="terminated" value="False" asp-for=@Model.Terminated />No<br />
-    <input type="radio" name="terminated" value="True" asp-for=@Model.Terminated />Yes<br />
-    <br />
+        <label asp-for=@Model.Terminated>Terminated?:</label><br />
+        <input class="" type="radio" name="terminated" value="False" asp-for=@Model.Terminated />No<br />
+        <input class="" type="radio" name="terminated" value="True" asp-for=@Model.Terminated />Yes<br />
+        <br />
 
-    <label asp-for=@Model.TerminationDate>Termination Date:</label>
-    <input type="date" asp-for=@Model.TerminationDate /><br />
+        <label asp-for=@Model.TerminationDate>Termination Date:</label>
+        <input class="form-control" type="date" asp-for=@Model.TerminationDate /><br />
 
-    <label asp-for=@Model.SurveySent>Qualtrics Survey Sent?:</label>
-    <input type="checkbox" asp-for=@Model.SurveySent /><br />
+        <label class="form-check-label"asp-for=@Model.SurveySent>Qualtrics Survey Sent?:</label>
+        <input class="" type="checkbox" asp-for=@Model.SurveySent /><br /><br />
 
-    <label asp-for=@Model.FormSubmitted>Form Submitted:</label><br />
-    <input type="radio" name="formsub" value="False" asp-for=@Model.FormSubmitted />No<br />
-    <input type="radio" name="formsub" value="True" asp-for=@Model.FormSubmitted />Yes<br />
-    <br />
+        <label asp-for=@Model.FormSubmitted>Form Submitted:</label><br />
+        <input class="" type="radio" name="formsub" value="False" asp-for=@Model.FormSubmitted />No<br />
+        <input class="" type="radio" name="formsub" value="True" asp-for=@Model.FormSubmitted />Yes<br />
+        <br />
 
-    <label asp-for=@Model.SubmissionDate>Form Submission Date:</label>
-    <input type="date" asp-for=@Model.SubmissionDate /><br />
+        <label asp-for=@Model.SubmissionDate>Form Submission Date:</label>
+        <input class="form-control" type="date" asp-for=@Model.SubmissionDate /><br />
 
-    <label asp-for=@Model.WorkAuthorization>Authorization to Work Received?:</label><br />
-    <input type="radio" name="authorization" value="False" asp-for=@Model.WorkAuthorization />No<br />
-    <input type="radio" name="authorization" value="True" asp-for=@Model.WorkAuthorization />Yes<br />
-    <br />
+        <label asp-for=@Model.WorkAuthorization>Authorization to Work Received?:</label><br />
+        <input class="" type="radio" name="authorization" value="False" asp-for=@Model.WorkAuthorization />No<br />
+        <input class="" type="radio" name="authorization" value="True" asp-for=@Model.WorkAuthorization />Yes<br />
+        <br />
 
-    <label asp-for=@Model.WorkAuthorizationEmailSent>Authorization to Work Email Sent Date:</label>
-    <input type="date" asp-for=@Model.WorkAuthorizationEmailSent /><br />
+        <label asp-for=@Model.WorkAuthorizationEmailSent>Authorization to Work Email Sent Date:</label>
+        <input class="form-control" type="date" asp-for=@Model.WorkAuthorizationEmailSent /><br />
 
-    <label asp-for=@Model.BYUName>BYU Name:</label>
-    <input asp-for=@Model.BYUName /><br />
-    <br />
+        <label asp-for=@Model.BYUName>BYU Name:</label>
+        <input class="form-control" asp-for=@Model.BYUName /><br />
+        <br />
 
-    <input type="submit" />
+        <input class="btn btn-outline-secondary" type="submit" />
 
-</form>
+    </form>
+</div>
 
