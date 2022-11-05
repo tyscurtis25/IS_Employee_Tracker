@@ -31,29 +31,58 @@ namespace IS_Employee_Tracker.Controllers
         public void ExportToCSV()
         {
             StringWriter sw = new StringWriter();
-            sw.WriteLine("\"FirstName\", \"LastName\"");
+            sw.WriteLine("\"First Name\", \"Last Name\", \"International\", \"Gender\", \"Email Address\", \"Expected Work Hours\", \"Semester\", \"Year\", \"Phone\", \"BYUID\", \"Position Type\", \"Class Code\", \"EmpRecordNum\"," +
+                "\"Supervisor Name\", \"Hire Date\", \"PayRate\", \"Last Pay Increase\", \"Pay Increase Amount\", \"Increase Input Date\", \"Year In Program\", \"Grad Tuition\", \"Name Change Complete\", \"Notes\", \"Terminated\"," +
+                "\"Termination Date\", \"Survey Sent\", \"Form Submitted\", \"Submission Date\", \"Work Authorization\", \"Work Authorization Email Sent\", \"BYU Name\"");
+    
 
             Response.Clear();
-            Response.Headers[HeaderNames.ContentDisposition] = "attachment; filename=DemoExcel.csv";
+            Response.Headers[HeaderNames.ContentDisposition] = "attachment; filename=AllEmployeesList.csv";
             Response.ContentType = "text/csv";
 
-            var employees = EmployeeInfo.DummyData();
+            var employees = _empContext.Information.ToList();
 
-            foreach (var employee in employees)
+            foreach (var e in employees)
             {
-                sw.WriteLine(string.Format("\"{0}\", \"{1}\"",
-                    employee.FirstName,
-                    employee.LastName));
+                sw.WriteLine(string.Format("\"{0}\", \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\", \"{6}\", \"{7}\", \"{8}\", \"{9}\", \"{10}\", \"{11}\", \"{12}\", \"{13}\", \"{14}\", \"{15}\", \"{16}\", " +
+                    "\"{17}\", \"{18}\", \"{19}\", \"{20}\", \"{21}\", \"{22}\", \"{23}\", \"{24}\", \"{25}\", \"{26}\", \"{27}\", \"{28}\", \"{29}\", \"{30}\",",
+                    e.FirstName,
+                    e.LastName,
+                    e.International, 
+                    e.Gender,
+                    e.EmailAddress,
+                    e.ExpectedWorkHours,
+                    e.Semester,
+                    e.Year,
+                    e.Phone,
+                    e.BYUID,
+                    e.PositionType,
+                    e.ClassCode,
+                    e.EmpRecordNum,
+                    e.SupervisorName,
+                    e.HireDate,
+                    e.PayRate,
+                    e.LastPayIncrease,
+                    e.PayIncreaseAmount,
+                    e.IncreaseInputDate,
+                    e.YearInProgram,
+                    e.GradTuition,
+                    e.NameChangeComplete,
+                    e.Notes,
+                    e.Terminated,
+                    e.TerminationDate,
+                    e.SurveySent,
+                    e.FormSubmitted,
+                    e.SubmissionDate,
+                    e.WorkAuthorization,
+                    e.WorkAuthorizationEmailSent, 
+                    e.BYUName));
             }
             Response.WriteAsync(sw.ToString());
             Response.Clear();
         }
 
 
-        public void ExportToExcel()
-        {
-
-        }
         // This is where you input new records
 
         [HttpGet]
