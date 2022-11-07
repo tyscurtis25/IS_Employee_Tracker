@@ -100,7 +100,8 @@ namespace IS_Employee_Tracker.Controllers
                 _empContext.Add(e);
                 _empContext.SaveChanges(e);
 
-                return View("Display", e);
+                return RedirectToAction("Display");
+                //return View("Display", e);
             }
 
             else
@@ -110,8 +111,8 @@ namespace IS_Employee_Tracker.Controllers
 
         }
 
-        // This displays a table that you can filter hypothetically
-        public IActionResult Display()
+            // This displays a table that you can filter hypothetically
+            public IActionResult Display()
         {
             var table = _empContext.Information.ToList();
             return View(table);
